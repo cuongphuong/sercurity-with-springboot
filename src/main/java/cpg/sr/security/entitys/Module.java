@@ -25,12 +25,23 @@ public class Module implements Serializable {
 	@Column(name = "ModuleName")
 	private String moduleName;
 
+	@Column(name = "LableName", nullable = false)
+	private String moduleLable;
+
 	// bi-directional many-to-one association to Function
 	@OneToMany(mappedBy = "module")
 	@JsonIgnore
 	private List<Function> functions;
 
 	public Module() {
+	}
+
+	public String getModuleLable() {
+		return moduleLable;
+	}
+
+	public void setModuleLable(String moduleLable) {
+		this.moduleLable = moduleLable;
 	}
 
 	public int getModuleID() {
@@ -74,6 +85,12 @@ public class Module implements Serializable {
 	public Module(int moduleID) {
 		super();
 		this.moduleID = moduleID;
+	}
+
+	public Module(String moduleName, String moduleLable) {
+		super();
+		this.moduleName = moduleName;
+		this.moduleLable = moduleLable;
 	}
 
 }

@@ -19,7 +19,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @PropertySources({ @PropertySource("classpath:security_db_config.properties") })
-@EnableJpaRepositories(entityManagerFactoryRef = "ds1EntityManagerFactory", transactionManagerRef = "ds1TransactionManager", basePackages = {
+@EnableJpaRepositories(entityManagerFactoryRef = "securityEntityManagerFactory", transactionManagerRef = "securityTransactionManager", basePackages = {
 		"cpg.sr.security.repositorys" })
 public class DataSource1Config {
 	@Autowired

@@ -37,8 +37,19 @@ public class Function implements Serializable {
 	@Column(name = "Enable")
 	private boolean enable;
 
+	@Column(name = "LableName")
+	public String functionLable;
+
 	public int getModuleID() {
 		return moduleID;
+	}
+
+	public String getFunctionLable() {
+		return functionLable;
+	}
+
+	public void setFunctionLable(String functionLable) {
+		this.functionLable = functionLable;
 	}
 
 	public void setModuleID(int moduleID) {
